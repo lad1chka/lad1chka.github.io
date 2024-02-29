@@ -28,7 +28,7 @@ btn2.addEventListener("click", function(){
         tg.MainButton.hide();
     }
     else {
-        tg.MainButton.setText("Вы выбрали котика 2!");
+        tg.MainButton.setText("Вы выбрали супер котика 2!");
         item = "2";
         tg.MainButton.show();
     }
