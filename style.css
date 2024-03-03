@@ -78,7 +78,7 @@ nav {
             var(--c3) 0
     );
     background-size: calc(var(--s) * 1.732) var(--s);
-    max-width: 290px;
+    max-width: 370px;
 }
 
 .inner {
