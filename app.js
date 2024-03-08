@@ -78,3 +78,44 @@ window.addEventListener('beforeunload', function (event) {
 let usercard = document.getElementById("usercard");
 let p = document.createElement("p");
 usercard.appendChild(p);
+
+///////////////////////////////////////
+//Далее функции для фронтенда, без использования тг
+///////////////////////////////////////
+
+function uploadAvatar() {
+    const avatarInput = document.getElementById('avatar-input');
+    const avatarImage = document.getElementById('avatar-image');
+    const chooseText = document.getElementById('choose-text');
+
+    avatarInput.addEventListener('change', function () {
+        const file = this.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                avatarImage.src = e.target.result;
+                avatarImage.style.display = 'block';
+                chooseText.style.display = 'none';
+                // Устанавливаем новый файл в атрибут input
+                avatarInput.files = [file];
+            };
+
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Programmatically trigger the file input when the user clicks on the circle
+    avatarImage.addEventListener('click', function () {
+        avatarInput.click();
+    });
+
+    // Reset the input value and image when the user clicks on the image again
+    avatarImage.addEventListener('dblclick', function () {
+        avatarInput.value = null;
+        avatarImage.src = '';
+        avatarImage.style.display = 'none';
+        chooseText.style.display = 'block';
+    });
+}
