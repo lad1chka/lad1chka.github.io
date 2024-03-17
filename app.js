@@ -77,12 +77,15 @@ window.addEventListener('beforeunload', function (event) {
 
 let usercard = document.getElementById("usercard");
 let p = document.createElement("p");
+document.getElementById("name").value = userData.last_name + " " + userData.first_name;
 usercard.appendChild(p);
 
 ///////////////////////////////////////
 //Далее функции для фронтенда, без использования тг
 ///////////////////////////////////////
 
+
+//Изменение аватарки
 function uploadAvatar() {
     const avatarInput = document.getElementById('avatar-input');
     const avatarImage = document.getElementById('avatar-image');
@@ -98,7 +101,6 @@ function uploadAvatar() {
                 avatarImage.src = e.target.result;
                 avatarImage.style.display = 'block';
                 chooseText.style.display = 'none';
-                // Устанавливаем новый файл в атрибут input
                 avatarInput.files = [file];
             };
 
@@ -106,12 +108,10 @@ function uploadAvatar() {
         }
     });
 
-    // Programmatically trigger the file input when the user clicks on the circle
     avatarImage.addEventListener('click', function () {
         avatarInput.click();
     });
 
-    // Reset the input value and image when the user clicks on the image again
     avatarImage.addEventListener('dblclick', function () {
         avatarInput.value = null;
         avatarImage.src = '';
