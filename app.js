@@ -119,3 +119,27 @@ function uploadAvatar() {
         chooseText.style.display = 'block';
     });
 }
+
+function editForm() {
+    var inputs = document.querySelectorAll("input, textarea");
+    inputs.forEach(function(input) {
+        input.readOnly = false;
+    });
+
+    var editBtn = document.querySelector(".editBtn");
+    editBtn.style.display = "none";
+
+    var saveBtn = document.createElement("button");
+    saveBtn.innerHTML = "Сохранить";
+    saveBtn.classList.add("editBtn"); // добавляем класс для стилизации
+
+    saveBtn.onclick = function() {
+        inputs.forEach(function(input) {
+            input.readOnly = true;
+        });
+        editBtn.style.display = "block";
+        saveBtn.parentNode.removeChild(saveBtn);
+    };
+
+    editBtn.parentNode.appendChild(saveBtn);
+}

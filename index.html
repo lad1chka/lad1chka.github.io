@@ -9,8 +9,6 @@
 <body>
 
 <div class="container">
-
-
     <nav>
         <div style="display: inline-block" class="star-icon"></div>
         <div style="margin-block: 10px;display: inline-block" class="experience-bar">
@@ -19,7 +17,6 @@
             </div>
         </div>
     </nav>
-
 
     <div style="display: flex; margin-top: 5px">
         <div class="block1" style="margin-top: 20px;">
@@ -35,7 +32,6 @@
             <h1 id="name" style="margin-left: 12px; font-size: 15px; color: #7a9a8a">Типичный пользователь</h1>
         </div>
 
-
         <div class="block2">
             <div class="card">
                 <div class="card-content" style="margin-left: 20px;padding-top: 50px">
@@ -49,33 +45,34 @@
         </div>
     </div>
 
-
     <div class="form-container" style="margin-top: 30px">
-        <form class="form">
+        <form class="form" id="form">
             <div style="display: flex">
                 <div class="form-group" style="width: 60%">
                     <label for="Date of Birth">День рождения</label>
-                    <input required="" name="Date of Birth" id="Date of Birth" type="text" style="width: 115px">
+                    <input required="" name="Date of Birth" id="Date of Birth" type="text" style="width: 115px"
+                           readonly>
                 </div>
                 <div class="form-group">
                     <label for="City">Город</label>
-                    <input required="" name="City" id="City" type="text" style="width: 125px">
+                    <input required="" name="City" id="City" type="text" style="width: 125px" value="123" readonly>
                 </div>
             </div>
             <div class="form-group">
                 <label for="Education">Образование</label>
-                <input required="" name="Education" id="Education" type="text" style="width: 280px">
+                <input required="" name="Education" id="Education" type="text" style="width: 280px" readonly>
             </div>
             <div class="form-group">
                 <label for="textarea">О себе</label>
-                <textarea required="" cols="50" rows="10" id="textarea" name="textarea" style="width: 280px; height: 80px"></textarea>
+                <textarea required="" cols="50" rows="10" id="textarea" name="textarea"
+                          style="width: 280px; height: 80px" readonly></textarea>
             </div>
-            <button type="submit" class="btn">Изменить</button>
+            <button type="button" class="editBtn" onclick="editForm()">Изменить</button>
         </form>
     </div>
 
 
-
+    <!-- Кнопка "На главную" -->
     <div style="bottom: 40px">
         <button class="btn_GoToTheClub" type="button" style="margin-top: 40px">
             <strong>На главную</strong>
